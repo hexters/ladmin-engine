@@ -83,7 +83,6 @@ return [
      */
     'template' => [
         'module' => 'ladmin',
-        'framework' => 'bootstrap'
     ],
 
     /*

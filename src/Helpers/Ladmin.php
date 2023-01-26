@@ -115,7 +115,7 @@ class Ladmin
     public function view_path($blade)
     {
         $name = $this->templateModule();
-        return $name . '::' . config('ladmin.template.framework', 'bootstrap') . '.' . $blade;
+        return $name . '::' . $blade;
     }
 
     /**
@@ -127,7 +127,7 @@ class Ladmin
     public function component($blade, $data = [])
     {
         $name = $this->templateModule();
-        return view($name . '::components.' . config('ladmin.template.framework', 'bootstrap') . '.' . $blade, $data);
+        return view($name . '::components.' . $blade, $data);
     }
 
     /**
@@ -139,7 +139,7 @@ class Ladmin
     public function component_path($path)
     {
         $name = $this->templateModule();
-        return $name . '::components.' . config('ladmin.template.framework', 'bootstrap') . '.' . $path;
+        return $name . '::components.' . $path;
     }
 
 
