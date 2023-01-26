@@ -60,6 +60,11 @@ class InstallPackageCommand extends Command
             '--tag' => 'ladmin-stub',
             '--force' => true
         ]);
+
+        $this->call('vendor:publish', [
+            '--tag' => 'ladmin-assets',
+            '--force' => true
+        ]);
         
 
         if ( ! $this->hasNotificationMigration() ) {

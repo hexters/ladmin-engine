@@ -62,6 +62,13 @@ class LadminServiceProvider extends ServiceProvider
         ], 'ladmin-config');
 
         /**
+         * Publish ladmin assets (js | css)
+         */
+        $this->publishes([
+            __DIR__ . '/../assets' => public_path(''),
+        ], 'ladmin-assets');
+
+        /**
          * Publish config file with admin option
          */
         $this->publishes([
