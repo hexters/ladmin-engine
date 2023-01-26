@@ -8,6 +8,20 @@ abstract class Datatables extends BaseDataTables
 {
 
     /**
+     * Custom single view
+     *
+     * @var array
+     */
+    public $singleView = 'vendor.datatables.single';
+
+    /**
+     * Custom default view
+     *
+     * @var array
+     */
+    public $defaultView = 'vendor.datatables.index';
+
+    /**
      * Custom data from Controller
      *
      * @var array
@@ -112,7 +126,9 @@ abstract class Datatables extends BaseDataTables
      */
     final  public static function table()
     {
-        return self::view(blade: ladmin()->view_path('vendor.datatables.single'));
+        $class = self::_class();
+
+        return self::view(blade: ladmin()->view_path( $class->singleView ));
     }
 
     /**
@@ -125,7 +141,9 @@ abstract class Datatables extends BaseDataTables
     final public static function view($blade = null, ?array $data = [])
     {
 
-        $blade = is_null($blade) ? ladmin()->view_path('vendor.datatables.index') : $blade;
+        $class = self::_class();
+
+        $blade = is_null($blade) ? ladmin()->view_path( $class->defaultView ) : $blade;
 
         return self::build($blade, $data);
     }
