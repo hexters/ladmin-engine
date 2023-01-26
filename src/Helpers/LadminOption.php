@@ -1,10 +1,10 @@
 <?php
 
-namespace Hexters\Ladmin\Helpers;
+namespace Ladmin\Engine\Helpers;
 
 use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Str;
-use Hexters\Ladmin\Models\LadminOption as ModelsLadminOption;
+use Ladmin\Engine\Models\LadminOption as ModelsLadminOption;
 use phpDocumentor\Reflection\Types\Boolean;
 
 trait LadminOption

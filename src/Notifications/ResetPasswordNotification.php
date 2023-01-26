@@ -1,6 +1,6 @@
 <?php
 
-namespace Hexters\Ladmin\Notifications;
+namespace Ladmin\Engine\Notifications;
 
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;

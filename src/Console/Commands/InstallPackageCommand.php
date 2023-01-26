@@ -1,6 +1,6 @@
 <?php
 
-namespace Hexters\Ladmin\Console\Commands;
+namespace Ladmin\Engine\Console\Commands;
 
 use Illuminate\Support\Str;
 use Illuminate\Console\Command;

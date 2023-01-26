@@ -1,13 +1,13 @@
 <?php
 
-namespace Hexters\Ladmin;
+namespace Ladmin\Engine;
 
-use Hexters\Ladmin\Events\LadminLoginEvent;
-use Hexters\Ladmin\Events\LadminLogoutEvent;
-use Hexters\Ladmin\Events\LadminResetPasswordEvent;
-use Hexters\Ladmin\Listeners\LadminLoginListener;
-use Hexters\Ladmin\Listeners\LadminLogoutListener;
-use Hexters\Ladmin\Listeners\LadminResetPasswordListener;
+use Ladmin\Engine\Events\LadminLoginEvent;
+use Ladmin\Engine\Events\LadminLogoutEvent;
+use Ladmin\Engine\Events\LadminResetPasswordEvent;
+use Ladmin\Engine\Listeners\LadminLoginListener;
+use Ladmin\Engine\Listeners\LadminLogoutListener;
+use Ladmin\Engine\Listeners\LadminResetPasswordListener;
 use Illuminate\Foundation\Support\Providers\EventServiceProvider as ServiceProvider;
 
 class EventServiceProvider extends ServiceProvider

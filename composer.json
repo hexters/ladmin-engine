@@ -1,5 +1,5 @@
 {
-    "name": "hexters/ladmin-engine",
+    "name": "ladmin/engine",
     "type": "library",
     "description": "Admin page scaffolding for Laravel.",
     "keywords": [

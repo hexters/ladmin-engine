@@ -1,6 +1,6 @@
 <?php
 
-use Hexters\Ladmin\Helpers\Ladmin;
+use Ladmin\Engine\Helpers\Ladmin;
 
 if( ! function_exists('ladmin') ) {
     function ladmin () {

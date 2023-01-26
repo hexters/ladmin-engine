@@ -1,10 +1,10 @@
 <?php
 
-namespace Hexters\Ladmin\Models;
+namespace Ladmin\Engine\Models;
 
-use Hexters\Ladmin\LadminAccount;
-use Hexters\Ladmin\LadminLoggable;
-use Hexters\Ladmin\UuidGenerator;
+use Ladmin\Engine\LadminAccount;
+use Ladmin\Engine\LadminLoggable;
+use Ladmin\Engine\UuidGenerator;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
@@ -60,6 +60,6 @@ class Admin extends Authenticatable
      */
     protected static function newFactory()
     {
-        return \Hexters\Ladmin\Factories\AdminFactory::new();
+        return \Ladmin\Engine\Factories\AdminFactory::new();
     }
 }

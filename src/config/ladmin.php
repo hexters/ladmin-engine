@@ -38,7 +38,7 @@ return [
      | into a class that extends to Illuminate\Foundation\Auth\User class.
      |
      */
-    'user' => \Hexters\Ladmin\Models\Admin::class,
+    'user' => \Ladmin\Engine\Models\Admin::class,
 
     /*
      |-----------------------------------------------------

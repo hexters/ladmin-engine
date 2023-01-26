@@ -1,6 +1,6 @@
 <?php
 
-namespace Hexters\Ladmin\Events;
+namespace Ladmin\Engine\Events;
 
 use Illuminate\Broadcasting\Channel;
 use Illuminate\Broadcasting\InteractsWithSockets;

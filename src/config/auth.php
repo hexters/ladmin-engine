@@ -70,7 +70,7 @@ return [
         ],
         'admins' => [
             'driver' => 'eloquent',
-            'model' => Hexters\Ladmin\Models\Admin::class,
+            'model' => Ladmin\Engine\Models\Admin::class,
         ],
 
         // 'users' => [

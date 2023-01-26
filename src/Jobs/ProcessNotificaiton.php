@@ -1,8 +1,8 @@
 <?php
 
-namespace Hexters\Ladmin\Jobs;
+namespace Ladmin\Engine\Jobs;
 
-use Hexters\Ladmin\Notifications\LadminNotificaiton;
+use Ladmin\Engine\Notifications\LadminNotificaiton;
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldBeUnique;
 use Illuminate\Contracts\Queue\ShouldQueue;

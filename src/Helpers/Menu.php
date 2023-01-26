@@ -1,8 +1,8 @@
 <?php
 
-namespace Hexters\Ladmin\Helpers;
+namespace Ladmin\Engine\Helpers;
 
-use Hexters\Ladmin\Contracts\MenuDivider;
+use Ladmin\Engine\Contracts\MenuDivider;
 
 class Menu
 {

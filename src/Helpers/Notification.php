@@ -1,9 +1,9 @@
 <?php
 
-namespace Hexters\Ladmin\Helpers;
+namespace Ladmin\Engine\Helpers;
 
-use Hexters\Ladmin\Exceptions\LadminNotificationException;
-use Hexters\Ladmin\Jobs\ProcessNotificaiton;
+use Ladmin\Engine\Exceptions\LadminNotificationException;
+use Ladmin\Engine\Jobs\ProcessNotificaiton;
 use Illuminate\Foundation\Auth\User;
 
 class Notification

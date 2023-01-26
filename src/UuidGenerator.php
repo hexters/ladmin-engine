@@ -1,6 +1,6 @@
 <?php
 
-namespace Hexters\Ladmin;
+namespace Ladmin\Engine;
 
 use Illuminate\Support\Str;
 

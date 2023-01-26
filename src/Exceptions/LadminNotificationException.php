@@ -1,6 +1,6 @@
 <?php
 
-namespace Hexters\Ladmin\Exceptions;
+namespace Ladmin\Engine\Exceptions;
 
 use Exception;
 

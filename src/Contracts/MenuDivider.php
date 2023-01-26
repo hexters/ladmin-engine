@@ -1,5 +1,5 @@
 <?php 
 
-namespace Hexters\Ladmin\Contracts;
+namespace Ladmin\Engine\Contracts;
 
 interface MenuDivider {}

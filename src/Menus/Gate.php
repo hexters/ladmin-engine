@@ -1,6 +1,6 @@
 <?php
 
-namespace Hexters\Ladmin\Menus;
+namespace Ladmin\Engine\Menus;
 
 class Gate
 {

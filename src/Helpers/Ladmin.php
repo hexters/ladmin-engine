@@ -1,12 +1,12 @@
 <?php
 
-namespace Hexters\Ladmin\Helpers;
+namespace Ladmin\Engine\Helpers;
 
 use Closure;
 use Illuminate\Support\Facades\Gate;
 use Illuminate\Foundation\Auth\User;
 use Illuminate\Support\Facades\Route;
-use Hexters\Ladmin\Http\Middleware\AuthMiddleware;
+use Ladmin\Engine\Http\Middleware\AuthMiddleware;
 
 class Ladmin
 {
@@ -161,7 +161,7 @@ class Ladmin
     /**
      * Load Menu class
      *
-     * @return \Hexters\Ladmin\Helpers\Menu
+     * @return \Ladmin\Engine\Helpers\Menu
      */
     public function menu()
     {
@@ -172,7 +172,7 @@ class Ladmin
      * Send notificaiton to user account
      *
      * @param \Illuminate\Foundation\Auth\User|null $user
-     * @return \Hexters\Ladmin\Helpers\Notification
+     * @return \Ladmin\Engine\Helpers\Notification
      */
     public function notification(?User $user = null)
     {

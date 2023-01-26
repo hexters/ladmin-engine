@@ -1,12 +1,12 @@
 <?php
 
-namespace Hexters\Ladmin;;
+namespace Ladmin\Engine;;
 
-use Hexters\Ladmin\Console\Commands\GenerateDataTablesCommand;
-use Hexters\Ladmin\Console\Commands\GenerateMenuCommand;
-use Hexters\Ladmin\Console\Commands\GenerateSearchGroupCommand;
-use Hexters\Ladmin\Console\Commands\InstallPackageCommand;
-use Hexters\Ladmin\Console\Commands\InstallPackageModuleCommand;
+use Ladmin\Engine\Console\Commands\GenerateDataTablesCommand;
+use Ladmin\Engine\Console\Commands\GenerateMenuCommand;
+use Ladmin\Engine\Console\Commands\GenerateSearchGroupCommand;
+use Ladmin\Engine\Console\Commands\InstallPackageCommand;
+use Ladmin\Engine\Console\Commands\InstallPackageModuleCommand;
 use Illuminate\Foundation\Auth\User;
 use Illuminate\Support\Facades\Gate;
 use Illuminate\Support\ServiceProvider;

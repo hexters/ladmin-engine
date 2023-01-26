@@ -1,8 +1,8 @@
 <?php
 
-namespace Hexters\Ladmin\Listeners;
+namespace Ladmin\Engine\Listeners;
 
-use Hexters\Ladmin\Events\LadminResetPasswordEvent;
+use Ladmin\Engine\Events\LadminResetPasswordEvent;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Queue\InteractsWithQueue;
 
@@ -21,7 +21,7 @@ class LadminResetPasswordListener implements ShouldQueue
     /**
      * Handle the event.
      *
-     * @param  \Hexters\Ladmin\Events\LadminResetPasswordEvent $event
+     * @param  \Ladmin\Engine\Events\LadminResetPasswordEvent $event
      * @return void
      */
     public function handle(LadminResetPasswordEvent $event)

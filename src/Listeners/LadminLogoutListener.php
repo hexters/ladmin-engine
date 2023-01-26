@@ -1,8 +1,8 @@
 <?php
 
-namespace Hexters\Ladmin\Listeners;
+namespace Ladmin\Engine\Listeners;
 
-use Hexters\Ladmin\Events\LadminLogoutEvent;
+use Ladmin\Engine\Events\LadminLogoutEvent;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Queue\InteractsWithQueue;
 

@@ -4,7 +4,7 @@ namespace {{ namespace }};
 
 use App\Models\{{ model }};
 use Illuminate\Support\Facades\Blade;
-use Hexters\Ladmin\Supports\Datatables;
+use Ladmin\Engine\Supports\Datatables;
 
 class {{ class }} extends Datatables
 {

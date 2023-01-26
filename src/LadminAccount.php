@@ -1,11 +1,11 @@
 <?php
 
-namespace Hexters\Ladmin;
+namespace Ladmin\Engine;
 
 use Illuminate\Database\Eloquent\Casts\Attribute;
-use Hexters\Ladmin\Models\LadminLoggable;
-use Hexters\Ladmin\Models\LadminRole;
-use Hexters\Ladmin\Notifications\ResetPasswordNotification;
+use Ladmin\Engine\Models\LadminLoggable;
+use Ladmin\Engine\Models\LadminRole;
+use Ladmin\Engine\Notifications\ResetPasswordNotification;
 
 trait LadminAccount
 {
@@ -18,7 +18,7 @@ trait LadminAccount
     /**
      * Multiple role
      *
-     * @return \Hexters\Ladmin\Models\LadminRole
+     * @return \Ladmin\Engine\Models\LadminRole
      */
     public function roles()
     {
@@ -40,7 +40,7 @@ trait LadminAccount
     /**
      * User activities
      *
-     * @return \Hexters\Ladmin\Models\LadminLoggable
+     * @return \Ladmin\Engine\Models\LadminLoggable
      */
     public function activities()
     {

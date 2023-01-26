@@ -2,8 +2,8 @@
 
 namespace Database\Seeders;
 
-use Hexters\Ladmin\Models\Admin;
-use Hexters\Ladmin\Models\LadminRole;
+use Ladmin\Engine\Models\Admin;
+use Ladmin\Engine\Models\LadminRole;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 

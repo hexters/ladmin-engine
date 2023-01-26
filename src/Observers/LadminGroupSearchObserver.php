@@ -1,6 +1,6 @@
 <?php
 
-namespace Hexters\Ladmin\Observers;
+namespace Ladmin\Engine\Observers;
 
 class LadminGroupSearchObserver
 {

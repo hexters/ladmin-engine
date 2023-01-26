@@ -1,6 +1,6 @@
 <?php
 
-namespace Hexters\Ladmin\Models;
+namespace Ladmin\Engine\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;

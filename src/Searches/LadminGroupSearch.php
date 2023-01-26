@@ -1,9 +1,9 @@
 <?php
 
-namespace Hexters\Ladmin\Searches;
+namespace Ladmin\Engine\Searches;
 
-use Hexters\Ladmin\Models\LadminGroupSearch as ModelsLadminGroupSearch;
-use Hexters\Ladmin\Observers\LadminGroupSearchObserver;
+use Ladmin\Engine\Models\LadminGroupSearch as ModelsLadminGroupSearch;
+use Ladmin\Engine\Observers\LadminGroupSearchObserver;
 
 trait LadminGroupSearch
 {
@@ -73,7 +73,7 @@ trait LadminGroupSearch
     /**
      * Custom list view
      *
-     * @param \Hexters\Ladmin\Models\LadminGroupSearch $data
+     * @param \Ladmin\Engine\Models\LadminGroupSearch $data
      * @return \Illuminate\Support\Facades\Blade
      */
     public function view($data)

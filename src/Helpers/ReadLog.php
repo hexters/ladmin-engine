@@ -1,6 +1,6 @@
 <?php
 
-namespace Hexters\Ladmin\Helpers;
+namespace Ladmin\Engine\Helpers;
 
 class ReadLog
 {

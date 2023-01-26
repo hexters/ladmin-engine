@@ -1,8 +1,8 @@
 <?php
 
-namespace Hexters\Ladmin\Models;
+namespace Ladmin\Engine\Models;
 
-use Hexters\Ladmin\LadminLoggable;
+use Ladmin\Engine\LadminLoggable;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 

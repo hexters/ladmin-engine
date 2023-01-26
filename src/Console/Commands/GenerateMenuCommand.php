@@ -1,6 +1,6 @@
 <?php
 
-namespace Hexters\Ladmin\Console\Commands;
+namespace Ladmin\Engine\Console\Commands;
 
 use Hexters\Laramodule\Console\Commands\BaseCommandTrait;
 use Illuminate\Console\GeneratorCommand;

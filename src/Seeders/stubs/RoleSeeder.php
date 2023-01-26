@@ -4,7 +4,7 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
-use Hexters\Ladmin\Models\LadminRole;
+use Ladmin\Engine\Models\LadminRole;
 
 class RoleSeeder extends Seeder
 {

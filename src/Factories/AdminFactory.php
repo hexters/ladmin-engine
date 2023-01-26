@@ -1,6 +1,6 @@
 <?php
 
-namespace Hexters\Ladmin\Factories;
+namespace Ladmin\Engine\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Str;
@@ -17,7 +17,7 @@ class AdminFactory extends Factory
      */
     protected static function appNamespace()
     {
-        return 'Hexters\\Ladmin\\Models\\';
+        return 'Ladmin\\Engine\\Models\\';
     }
 
     /**

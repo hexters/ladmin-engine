@@ -1,8 +1,8 @@
 <?php
 
-namespace Hexters\Ladmin\Models;
+namespace Ladmin\Engine\Models;
 
-use Hexters\Ladmin\UuidGenerator;
+use Ladmin\Engine\UuidGenerator;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Laravel\Scout\Attributes\SearchUsingFullText;

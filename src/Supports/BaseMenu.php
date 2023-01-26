@@ -1,8 +1,8 @@
 <?php
 
-namespace Hexters\Ladmin\Supports;
+namespace Ladmin\Engine\Supports;
 
-use Hexters\Ladmin\Contracts\MenuDivider;
+use Ladmin\Engine\Contracts\MenuDivider;
 
 abstract class BaseMenu
 {

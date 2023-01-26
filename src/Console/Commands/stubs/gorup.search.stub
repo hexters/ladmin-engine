@@ -4,7 +4,7 @@ namespace {{ namespace }};
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Foundation\Auth\User as Authenticatable;
-use Hexters\Ladmin\Searches\LadminGroupSearch;
+use Ladmin\Engine\Searches\LadminGroupSearch;
 
 class {{ class }} extends Model
 {

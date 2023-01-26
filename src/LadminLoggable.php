@@ -1,8 +1,8 @@
 <?php
 
-namespace Hexters\Ladmin;
+namespace Ladmin\Engine;
 
-use Hexters\Ladmin\Models\LadminLoggable as ModelsLadminLoggable;
+use Ladmin\Engine\Models\LadminLoggable as ModelsLadminLoggable;
 
 trait LadminLoggable
 {
@@ -11,7 +11,7 @@ trait LadminLoggable
     /**
      * Loggable relations
      *
-     * @return \Hexters\Ladmin\Models\LadminLoggable
+     * @return \Ladmin\Engine\Models\LadminLoggable
      */
     public function ladmin_loggable()
     {
