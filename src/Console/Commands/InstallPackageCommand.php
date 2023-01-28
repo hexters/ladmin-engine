@@ -2,9 +2,11 @@
 
 namespace Ladmin\Engine\Console\Commands;
 
+use Exception;
 use Illuminate\Support\Str;
 use Illuminate\Console\Command;
 use Illuminate\Support\Facades\Schema;
+use Symfony\Component\Console\Input\InputOption;
 
 class InstallPackageCommand extends Command
 {
@@ -17,14 +19,15 @@ class InstallPackageCommand extends Command
      *
      * @var string
      */
-    protected $signature = 'ladmin:install';
+    protected $signature = 'ladmin:install
+                            {--module= : Add existing module name, for run command after installation}';
 
     /**
      * The console command description.
      *
      * @var string
      */
-    protected $description = 'Install ladmin package';
+    protected $description = 'Install ladmin engine support';
 
     /**
      * Execute the console command.
@@ -33,13 +36,11 @@ class InstallPackageCommand extends Command
      */
     public function handle()
     {
-        
-        $this->info('Installing...');
-        
+
         $this->checkModuleFoler();
 
         $this->overideComposerJson();
-        
+
 
         $this->call('vendor:publish', [
             '--tag' => 'ladmin-config',
@@ -50,21 +51,25 @@ class InstallPackageCommand extends Command
             '--tag' => 'ladmin-database-seeder',
             '--force' => true
         ]);
-            
+
         $this->call('vendor:publish', [
             '--tag' => 'ladmin-menu',
             '--force' => true
         ]);
-        
+
         $this->call('vendor:publish', [
             '--tag' => 'ladmin-stub',
             '--force' => true
         ]);
-        
 
-        if ( ! $this->hasNotificationMigration() ) {
+
+        if (!$this->hasNotificationMigration()) {
             $this->call('notifications:table');
         }
+
+        $this->installAnOtherModule(
+            $this->option('module')
+        );
 
         $this->info('Please wait a moment for dump-autoload...');
 
@@ -77,7 +82,7 @@ class InstallPackageCommand extends Command
         $this->info('php artisan migrate --seed');
 
         $this->line('');
-        
+
         $this->line('');
         $this->info('Instalation finished successfully. 🏁');
         $this->line('');
@@ -88,12 +93,30 @@ class InstallPackageCommand extends Command
     }
 
     /**
+     * Install other command from an other module
+     *
+     * @return void
+     */
+    protected function installAnOtherModule($module)
+    {
+        if ($module) {
+            $class = "Modules\\{$module}\\Console\\Commands\\SetupCommand";
+            if (class_exists($class)) {
+                $this->line("Setup component from {$module} module");
+                $this->call($class);
+                $this->line('');
+            }
+        }
+    }
+
+    /**
      * Check notification migration file
      */
-    protected function hasNotificationMigration() {
+    protected function hasNotificationMigration()
+    {
         $exists = false;
-        foreach(scandir(base_path('database/migrations')) as $file) {
-            if(Str::of($file)->contains('create_notifications_table')) {
+        foreach (scandir(base_path('database/migrations')) as $file) {
+            if (Str::of($file)->contains('create_notifications_table')) {
                 $exists = true;
             }
         }
@@ -139,5 +162,18 @@ class InstallPackageCommand extends Command
         } else {
             $this->info('Module folder is ready 👍');
         }
+    }
+
+
+    /**
+     * Get the console command options.
+     *
+     * @return array
+     */
+    protected function getOptions()
+    {
+        return [
+            ['module', 'm', InputOption::VALUE_OPTIONAL, 'Add existing module name']
+        ];
     }
 }

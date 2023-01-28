@@ -8,7 +8,7 @@ $ composer require ladmin/engine
 
 Follow the installation
 ```
-$ php artisan ladmin:install
+$ php artisan ladmin:install --module=[OPOTIONS]
 ```
 
 Run migrate and seed, to install ladmin database tables
