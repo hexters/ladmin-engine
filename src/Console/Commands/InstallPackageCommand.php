@@ -20,7 +20,7 @@ class InstallPackageCommand extends Command
      * @var string
      */
     protected $signature = 'ladmin:install
-                            {--module= : Add existing module name, for run command after installation}';
+                            {--command= : Run an other command after installation}';
 
     /**
      * The console command description.
@@ -67,8 +67,8 @@ class InstallPackageCommand extends Command
             $this->call('notifications:table');
         }
 
-        $this->installAnOtherModule(
-            $this->option('module')
+        $this->rumAnOtherCommand(
+            $this->option('command')
         );
 
         $this->info('Please wait a moment for dump-autoload...');
@@ -97,15 +97,10 @@ class InstallPackageCommand extends Command
      *
      * @return void
      */
-    protected function installAnOtherModule($module)
+    protected function rumAnOtherCommand($command)
     {
-        if ($module) {
-            $class = "Modules\\{$module}\\Console\\Commands\\SetupCommand";
-            if (class_exists($class)) {
-                $this->line("Setup component from {$module} module");
-                $this->call($class);
-                $this->line('');
-            }
+        if ($command) {
+            $this->call($command);
         }
     }
 
@@ -173,7 +168,7 @@ class InstallPackageCommand extends Command
     protected function getOptions()
     {
         return [
-            ['module', 'm', InputOption::VALUE_OPTIONAL, 'Add existing module name']
+            ['command', 'c', InputOption::VALUE_OPTIONAL, 'Run an other command after installation']
         ];
     }
 }
