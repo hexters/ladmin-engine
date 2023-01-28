@@ -5,7 +5,6 @@ namespace Ladmin\Engine;;
 use Ladmin\Engine\Console\Commands\GenerateMenuCommand;
 use Ladmin\Engine\Console\Commands\GenerateSearchGroupCommand;
 use Ladmin\Engine\Console\Commands\InstallPackageCommand;
-use Ladmin\Engine\Console\Commands\InstallPackageModuleCommand;
 use Illuminate\Foundation\Auth\User;
 use Illuminate\Support\Facades\Gate;
 use Illuminate\Support\ServiceProvider;
@@ -71,7 +70,6 @@ class LadminServiceProvider extends ServiceProvider
             $this->commands([
                 GenerateMenuCommand::class,
                 InstallPackageCommand::class,
-                InstallPackageModuleCommand::class,
                 GenerateSearchGroupCommand::class,
             ]);
         }

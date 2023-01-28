@@ -1,7 +1,7 @@
 {
     "name": "ladmin/engine",
     "type": "library",
-    "description": "Admin page scaffolding for Laravel.",
+    "description": "Ladmin Engine is an package to support Laravel Admin scaffolding.",
     "keywords": [
         "Laravel",
         "Laravel Admin",
@@ -34,9 +34,7 @@
         }
     },
     "require": {
-        "php": "^8.0",
-        "yajra/laravel-datatables-oracle": "~9.0",
-        "laravel/scout": "^9.4",
-        "hexters/laramodule": "^1.0"
+        "php": "^8.1",
+        "laravel/scout": "^9.4"
     }
 }
