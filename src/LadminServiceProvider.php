@@ -2,7 +2,6 @@
 
 namespace Ladmin\Engine;;
 
-use Ladmin\Engine\Console\Commands\GenerateDataTablesCommand;
 use Ladmin\Engine\Console\Commands\GenerateMenuCommand;
 use Ladmin\Engine\Console\Commands\GenerateSearchGroupCommand;
 use Ladmin\Engine\Console\Commands\InstallPackageCommand;
@@ -71,7 +70,6 @@ class LadminServiceProvider extends ServiceProvider
         if ($this->app->runningInConsole()) {
             $this->commands([
                 GenerateMenuCommand::class,
-                GenerateDataTablesCommand::class,
                 InstallPackageCommand::class,
                 InstallPackageModuleCommand::class,
                 GenerateSearchGroupCommand::class,
