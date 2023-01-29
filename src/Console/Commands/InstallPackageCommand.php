@@ -20,7 +20,7 @@ class InstallPackageCommand extends Command
      * @var string
      */
     protected $signature = 'ladmin:install
-                            {--command= : Run an other command after installation}';
+                            {--and= : Run an other command after installation}';
 
     /**
      * The console command description.
@@ -68,7 +68,7 @@ class InstallPackageCommand extends Command
         }
 
         $this->rumAnOtherCommand(
-            $this->option('command')
+            $this->option('and')
         );
 
         $this->info('Please wait a moment for dump-autoload...');
