@@ -78,18 +78,14 @@ class InstallPackageCommand extends Command
         $this->line('');
 
         $this->line('----------------------------------------------------');
-        $this->line('# 1. Now please run migrate, for install ladmin database tables');
+        $this->line('');
         $this->info('php artisan migrate --seed');
-
         $this->line('');
-
+        $this->info('Installation has been finished. 🏁');
         $this->line('');
-        $this->info('Instalation finished successfully. 🏁');
-        $this->line('');
-
         $this->line('----------------------------------------------------');
-        $this->info('Visit : ' . url('/administrator'));
-        $this->line('----------------------------------------------------');
+        $this->line('');
+        
     }
 
     /**
