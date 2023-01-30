@@ -5,6 +5,7 @@ namespace Ladmin\Engine\Console\Commands;
 use Exception;
 use Illuminate\Support\Str;
 use Illuminate\Console\Command;
+use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Schema;
 use Symfony\Component\Console\Input\InputOption;
 
@@ -85,7 +86,6 @@ class InstallPackageCommand extends Command
         $this->line('');
         $this->line('----------------------------------------------------');
         $this->line('');
-        
     }
 
     /**
@@ -96,7 +96,11 @@ class InstallPackageCommand extends Command
     protected function rumAnOtherCommand($command)
     {
         if ($command) {
-            $this->call($command);
+            try {
+                $this->call($command);
+            } catch (Exception $e) {
+                Log::error(__CLASS__, $e->getMessage());
+            }
         }
     }
 
