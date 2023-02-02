@@ -87,7 +87,7 @@ abstract class BaseMenu
      *
      * @return String
      */
-    final public function getIsActive()
+    public function getIsActive()
     {
         return  config('ladmin.prefix') . '/' . ltrim($this->isActive, '/');
     }
