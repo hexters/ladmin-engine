@@ -60,7 +60,7 @@ abstract class BaseMenu
     {
         return $this->name;
     }
-    
+
     /**
      * Get menu icon
      *
@@ -80,8 +80,8 @@ abstract class BaseMenu
     {
         return $this->description;
     }
-    
-    
+
+
     /**
      * Get indicator menu active
      *
@@ -89,7 +89,11 @@ abstract class BaseMenu
      */
     public function getIsActive()
     {
-        return  config('ladmin.prefix') . '/' . ltrim($this->isActive, '/');
+        if (property_exists(__class__, 'isActive')) {
+            return  config('ladmin.prefix') . '/' . ltrim($this->isActive, '/');
+        }
+
+        return config('ladmin.prefix') . '/';
     }
 
     /**
@@ -174,7 +178,7 @@ abstract class BaseMenu
 
         foreach ($this->submenus() as $submenu) {
             $menuClass = app($submenu);
-            if($menuClass instanceof MenuDivider) {
+            if ($menuClass instanceof MenuDivider) {
                 $submenus[] = $menuClass->divider();
             } else {
                 $submenus[] = $menuClass->render();
@@ -189,7 +193,8 @@ abstract class BaseMenu
      *
      * @return void
      */
-    protected function target() {
+    protected function target()
+    {
         return '_self';
     }
 }
