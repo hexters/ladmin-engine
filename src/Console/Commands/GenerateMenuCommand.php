@@ -40,7 +40,7 @@ class GenerateMenuCommand extends GeneratorCommand
      * @var string
      */
     protected $type = 'Menu';
-    
+
 
     /**
      * Get the stub file for the generator.
@@ -60,6 +60,11 @@ class GenerateMenuCommand extends GeneratorCommand
      */
     protected function resolveStubPath($stub)
     {
+
+        if (is_file(base_path('stubs/menu.stub'))) {
+            return base_path('stubs/menu.stub');
+        }
+
         return __DIR__ . $stub;
     }
 
