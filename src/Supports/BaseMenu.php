@@ -126,7 +126,7 @@ abstract class BaseMenu
      *
      * @return Array
      */
-    final public function render(): array
+    public function render(): array
     {
         return [
             'type' => 'menu',
@@ -149,7 +149,7 @@ abstract class BaseMenu
      *
      * @return Array
      */
-    final public function divider(): array
+    public function divider(): array
     {
         return [
             'type' => 'divider',
@@ -172,7 +172,7 @@ abstract class BaseMenu
      *
      * @return Array
      */
-    final public function getSubmenus(): array
+    public function getSubmenus(): array
     {
         $submenus = [];
 
