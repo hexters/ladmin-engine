@@ -21,6 +21,8 @@ return new class extends Migration
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->timestamp('online_at')->nullable();
+            $table->string('type')->nullable();
+            $table->string('state')->default('active')->nullable();
             $table->rememberToken();
             $table->timestamps();
         });
