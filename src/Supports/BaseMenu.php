@@ -89,7 +89,7 @@ abstract class BaseMenu
      */
     public function getIsActive()
     {
-        if (property_exists(__class__, 'isActive')) {
+        if (property_exists(get_called_class(), 'isActive')) {
             return  config('ladmin.prefix') . '/' . ltrim($this->isActive, '/');
         }
 
