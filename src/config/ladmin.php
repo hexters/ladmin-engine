@@ -14,7 +14,7 @@ return [
      |
      */
 
-    'logo' => env('LADMIN_LOGO_URL', 'https://github.com/laravel/art/blob/master/logo-lockup/4%20PNG/3%20RGB/1%20Full%20Color/laravel-logolockup-rgb-red.png?raw=true'),
+    'logo' => env('LADMIN_LOGO_URL', '/ladmin.png'),
 
     /*
      |-----------------------------------------------------

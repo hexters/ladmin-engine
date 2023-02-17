@@ -46,8 +46,15 @@ class LadminServiceProvider extends ServiceProvider
          * Publish custom route stub
          */
         $this->publishes([
-            __DIR__ . '/../stubs' => base_path('stubs'),
+            __DIR__ . '/../stubs/stubs' => base_path('stubs'),
         ], 'ladmin-stub');
+
+        /**
+         * Publish custom route stub
+         */
+        $this->publishes([
+            __DIR__ . '/../stubs/ladmin.png' => public_path('ladmin.png'),
+        ], 'ladmin-logo');
 
 
         /**
@@ -58,7 +65,7 @@ class LadminServiceProvider extends ServiceProvider
             __DIR__ . '/config/scout.php' => config_path('scout.php'),
             __DIR__ . '/config/auth.php' => config_path('auth.php'),
         ], 'ladmin-config');
-        
+
         /**
          * Publish config file with admin option
          */

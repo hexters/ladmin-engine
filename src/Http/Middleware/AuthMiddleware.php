@@ -23,6 +23,10 @@ class AuthMiddleware
 
         Auth::shouldUse( config('ladmin.auth.guard') );
 
+        auth()->user()->update([
+            'online_at' => now()->addMinute(5)
+        ]);
+
         return $next($request);
     }
 }

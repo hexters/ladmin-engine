@@ -62,7 +62,7 @@ trait LadminAccount
     public function gravatar(): Attribute
     {
         return new Attribute(
-            get: fn () => 'https://www.gravatar.com/avatar/' . md5(strtolower(trim($this->email))) . '&s=100',
+            get: fn () => 'https://www.gravatar.com/avatar/' . md5(strtolower(trim($this->email))) . '&s=250',
         );
     }
 

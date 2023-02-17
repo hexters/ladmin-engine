@@ -6,6 +6,7 @@ use Exception;
 use Illuminate\Support\Str;
 use Illuminate\Console\Command;
 use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\Process;
 use Illuminate\Support\Facades\Schema;
 use Symfony\Component\Console\Input\InputOption;
 
@@ -63,6 +64,10 @@ class InstallPackageCommand extends Command
             '--force' => true
         ]);
 
+        $this->call('vendor:publish', [
+            '--tag' => 'ladmin-logo',
+            '--force' => true
+        ]);
 
         if (!$this->hasNotificationMigration()) {
             $this->call('notifications:table');
@@ -71,13 +76,7 @@ class InstallPackageCommand extends Command
         $this->rumAnOtherCommand(
             $this->option('and')
         );
-
-        $this->info('Please wait a moment for dump-autoload...');
-
-        exec('composer dump-autoload');
-
-        $this->line('');
-
+        
         $this->line('----------------------------------------------------');
         $this->line('');
         $this->info('php artisan migrate --seed');
@@ -86,6 +85,9 @@ class InstallPackageCommand extends Command
         $this->line('');
         $this->line('----------------------------------------------------');
         $this->line('');
+
+        $this->info('Please wait a moment for dump-autoload...');
+        Process::path(base_path(''))->start('composer dump-autoload');
     }
 
     /**
@@ -99,7 +101,6 @@ class InstallPackageCommand extends Command
             try {
                 $this->call($command);
             } catch (Exception $e) {
-                Log::error(__CLASS__, $e->getMessage());
             }
         }
     }
