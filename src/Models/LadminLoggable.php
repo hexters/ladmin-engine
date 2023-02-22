@@ -44,6 +44,14 @@ class LadminLoggable extends Model
         return Blade::render('<span class="badge ' . ($colors[strtolower($this->type)] ?? 'primary') . '">' . ($this->type) . '</span>');
     }
 
+    /**
+     * Get the route key for the model.
+     */
+    public function getRouteKeyName(): string
+    {
+        return 'uuid';
+    }
+
     public function admin()
     {
         return $this->belongsTo(config('ladmin.user'), 'user_id', 'id');
