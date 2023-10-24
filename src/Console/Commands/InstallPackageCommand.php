@@ -73,7 +73,7 @@ class InstallPackageCommand extends Command
             $this->call('notifications:table');
         }
 
-        $this->rumAnOtherCommand(
+        $this->runAnOtherCommand(
             $this->option('and')
         );
         
@@ -95,7 +95,7 @@ class InstallPackageCommand extends Command
      *
      * @return void
      */
-    protected function rumAnOtherCommand($command)
+    protected function runAnOtherCommand($command)
     {
         if ($command) {
             try {

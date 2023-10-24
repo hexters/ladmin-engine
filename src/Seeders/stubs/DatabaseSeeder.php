@@ -7,6 +7,8 @@ use Ladmin\Engine\Models\LadminRole;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
+use function Laravel\Prompts\table;
+
 class DatabaseSeeder extends Seeder
 {
     /**
@@ -40,11 +42,17 @@ class DatabaseSeeder extends Seeder
         Admin::factory(3)->create()
             ->each(function ($admin) use ($role) {
                 $admin->roles()->sync([$role->id]);
-
-                $this->command->line('--------------------------------------------');
-                $this->command->info('email     : ' . $admin->email);
-                $this->command->info('password  : password');
             });
+
+        table(
+            ['E-Mail Address', 'Password'],
+            Admin::get()->map(function ($admin) {
+                return [
+                    $admin->email,
+                    'password'
+                ];
+            })
+        );
 
         $this->call(RoleSeeder::class);
     }

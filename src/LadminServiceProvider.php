@@ -8,6 +8,7 @@ use Ladmin\Engine\Console\Commands\InstallPackageCommand;
 use Illuminate\Foundation\Auth\User;
 use Illuminate\Support\Facades\Gate;
 use Illuminate\Support\ServiceProvider;
+use Ladmin\Engine\Console\Commands\ListOfLadminAccountCommand;
 
 class LadminServiceProvider extends ServiceProvider
 {
@@ -78,6 +79,7 @@ class LadminServiceProvider extends ServiceProvider
                 GenerateMenuCommand::class,
                 InstallPackageCommand::class,
                 GenerateSearchGroupCommand::class,
+                ListOfLadminAccountCommand::class,
             ]);
         }
 
