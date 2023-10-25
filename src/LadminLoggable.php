@@ -25,8 +25,8 @@ trait LadminLoggable
         static::created(fn ($model) => self::activity($model, 'Create'));
         static::deleting(fn ($model) => self::activity($model, 'Delete'));
 
-        if (method_exists(__CLASS__, 'trashed')) {
-            static::trashed(fn ($model) => self::activity($model, 'Trash'));
+        if (method_exists(__CLASS__, 'softDeleted')) {
+            static::softDeleted(fn ($model) => self::activity($model, 'Trash'));
         }
 
         if (method_exists(__CLASS__, 'forceDeleted')) {
