@@ -43,7 +43,7 @@ class ProcessNotificaiton implements ShouldQueue
          */
         if ($this->user) {
             if (method_exists($this->user, 'notify')) {
-                if ($this->user->can(($this->data['gates'] ?? []))) {
+                if ($this->user->can($this->data['gates'])) {
                     $this->user->notify(new LadminNotificaiton($this->data));
                 }
             }

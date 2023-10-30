@@ -118,13 +118,15 @@ class Notification
      * @param [type] $gates
      * @return void
      */
-    public function setGates($gates)
+    public function setGates($gates = null)
     {
 
-        if (is_array($gates)) {
-            $this->gates = $gates;
-        } else if (is_string($gates)) {
-            $this->gates = [$gates];
+        if ($gates) {
+            if (is_array($gates)) {
+                $this->gates = $gates;
+            } else if (is_string($gates)) {
+                $this->gates = [$gates];
+            }
         }
 
         return $this;
@@ -154,10 +156,10 @@ class Notification
             throw new LadminNotificationException('Notification description is required');
         }
 
-        if (is_null($this->gates) || count($this->gates) < 1 || empty($this->gates)) {
+        if (is_array($this->gates) && count($this->gates) < 1) {
             $this->gates = ladmin()->menu()->allGates();
         }
-        
+
         dispatch(new ProcessNotificaiton([
             'title' => $this->title,
             'link' => $this->link,
